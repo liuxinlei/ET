@@ -64,7 +64,8 @@ namespace ET
 			this.types.Clear();
 			foreach (Assembly value in this.assemblies.Values)
 			{
-				foreach (Type type in value.GetTypes())
+				var AssemblyTypes = value.GetTypes();
+				foreach (Type type in AssemblyTypes)
 				{
 					if (type.IsAbstract)
 					{
